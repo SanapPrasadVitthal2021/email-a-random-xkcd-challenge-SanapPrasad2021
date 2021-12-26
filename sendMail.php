@@ -10,13 +10,9 @@
         $sender .= "MIME-Version: 1.0"."\r\n";
         $sender .="Content-type:text/html;charset=UTF-8"."\r\n";
         
-        if(mail($to,$subject,$message,$sender)){
-            $insert=$mysqli->query("INSERT INTO visitor_det(fname,lname,email,vkey,action)VALUES('$fname','$lname','$email','$vkey','$action')");
-            if($insert){
-                header('location:thankyou.php');
-            }
+        if(mail($to,$subject,$message,$sender)){       
+                header('location:thankyou.php');          
         }else{
-            header('location:index.php');
             echo "<h2>Your email is not valid please try another or re-check.</h2>";
         }
           
