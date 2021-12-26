@@ -11,6 +11,8 @@
         $fname=$_POST['fname'];
         $lname=$_POST['lname'];
         $email=$_POST['email'];
+        $_SESSION['fname']=$fname;
+        $_SESSION['lname']=$lname;
         if(strlen($fname)<4)
         {
             $fnameErr="Please enter valid first name";
@@ -32,6 +34,7 @@
             $action="stop";
             // $vkey=md5(time().$fname);
             $vkey=rand(000000,999999);
+
             //Checking already user or not
             $check=$mysqli->query("SELECT * FROM visitor_det WHERE email='$email'");
             if(mysqli_num_rows($check) == 0)
@@ -39,8 +42,7 @@
                 // echo"Success"; 
                 $insert=$mysqli->query("INSERT INTO visitor_det(fname,lname,email,vkey,action)VALUES('$fname','$lname','$email','$vkey','$action')");
                 if($insert){                    
-                    $_SESSION['fname']=$fname;
-                    $_SESSION['lname']=$lname;
+
                     SendMail($fname,$lname,$email,$vkey);
                 }else{
                     echo"Mail not sent."; 
@@ -48,8 +50,7 @@
             }else{
                  $update=$mysqli->query("UPDATE visitor_det SET fname='$fname',lname='$lname',email='$email',vkey='$vkey',verified='0',action='stop' WHERE email='$email'");
                  if($update){
-                        $_SESSION['fname']=$fname;
-                        $_SESSION['lname']=$lname;
+                     
                         SendMail($fname,$lname,$email,$vkey);
                  }
 
