@@ -37,14 +37,14 @@
             if(mysqli_num_rows($check) == 0)
             {
                 // echo"Success"; 
-                $insert=$mysqli->query("INSERT INTO visitor_det(fname,lname,email,vkey,action)VALUES('$fname','$lname','$email','$vkey','$action')");
-                if($insert){                    
+                // $insert=$mysqli->query("INSERT INTO visitor_det(fname,lname,email,vkey,action)VALUES('$fname','$lname','$email','$vkey','$action')");
+                // if($insert){                    
                     $_SESSION['fname']=$fname;
                     $_SESSION['lname']=$lname;
                     SendMail($fname,$lname,$email,$vkey);
-                }else{
-                    echo"Mail not sent."; 
-                }
+                // }else{
+                //     echo"Mail not sent."; 
+                // }
             }else{
                 echo"You are already register"; 
             }
@@ -130,7 +130,7 @@
     </form>
 
     <form action="" method="post">
-        
+
     </from>
   
 </body>
