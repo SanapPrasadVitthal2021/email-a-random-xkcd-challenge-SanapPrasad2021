@@ -12,9 +12,12 @@
         
         if(mail($to,$subject,$message,$sender)){
             $insert=$mysqli->query("INSERT INTO visitor_det(fname,lname,email,vkey,action)VALUES('$fname','$lname','$email','$vkey','$action')");
-            header('location:thankyou.php');
+            if($insert){
+                header('location:thankyou.php');
+            }
         }else{
             header('location:index.php');
+            echo "<h2>Your email is not valid please try another or re-check.</h2>";
         }
           
     }
