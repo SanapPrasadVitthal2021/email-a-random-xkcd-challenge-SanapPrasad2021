@@ -19,3 +19,6 @@ Fields- 1)fname:For first name.
         5)verified:For verification.
         6)date_time:For date and time.
         7)action:For start and stop sending mails.
+
+----- Database -----
+I use bigrockin this assignment
