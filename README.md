@@ -3,4 +3,19 @@
 Hi, my name is Prasad Sanap.
 This is the Email A Random XKCD Challenge assignment.
 
+-----Description-----
+This is a simple PHP application that accepts a visitor’s email address and emails them random XKCD comics every five minutes. 
 
+
+
+-----Table-----
+In this application I use one table for getting information from the visitors.
+ 
+Table-visitor_det
+Fields- 1)fname:For first name.
+        2)lname:For last name.
+        3)email:For email address.
+        4)vkey:For verification key.
+        5)verified:For verification.
+        6)date_time:For date and time.
+        7)action:For start and stop sending mails.
