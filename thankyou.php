@@ -36,7 +36,7 @@
       </tr>
       <tr>
         <td colspan="2">
-        <p ><strong>Please check your email</strong> for further instructions on how to complete your account setup.</p>
+        <p ><strong>Please check your email for OTP</strong>.Click <strong>Continue </strong>to go next page</p>
 
         </td>
       </tr>

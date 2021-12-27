@@ -70,7 +70,7 @@
         </tr>
         <tr>
           <th colspan="2">
-            <p>Please click OK for complete your account setup.</p>
+            <p>Please click <strong> OK </strong>for complete your account setup.</p>
           </th>
         </tr>
         <tr>
