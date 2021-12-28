@@ -6,10 +6,17 @@ This is the Email A Random XKCD Challenge assignment.
 -----Description-----
 This is a simple PHP application that accepts a visitor’s email address and emails them random XKCD comics every five minutes. And every mail contains the unsubscribe link so they can stop the receiving email.
 
-In the email the are receving the information related to xkcd comic.
+In the email they are receving the information related to xkcd comic and img also.
 
------Table-----
-In this application I use one table for getting information from the visitors.
+
+----- Links -----
+
+
+
+
+
+----- Table -----
+In this application I use one table for getting information from the visitors and store it into.
  
 Table-visitor_det
 Fields- 1)fname:For first name.
@@ -46,7 +53,7 @@ Add [shellscript.vbs] file as schedular>>Set time in that.
 1.https://www.youtube.com/
 2.https://www.google.com/
 
------ Youtube Channels -----
+----- Youtube channels refers -----
 1.phpBasics
 2.programming with vishal
 3.Justin Stolpe
