@@ -27,7 +27,28 @@ I use for this assignment mysql database which is virtual.
 
 ----- How to run -----
 Note: You need to install xampp for run this project.
-1.Download this file and paste it into [C:\xampp\htdocs]
+1.Download this file and paste it into [C:\xampp\htdocs].
 2.Create database or import [visitor_det.sql] file into your localhost.
 3.Update [databaseConnection.php] with your credentials.
-4.
+4.Start your xampp.
+5.Goto browser and navigate your php script.
+
+
+
+----- Include Credit -----
+1.https://www.youtube.com/
+2.https://www.google.com/
+
+----- Youtube Channels -----
+1.phpBasics
+2.programming with vishal
+3.Justin Stolpe
+4.CodeWithHarry
+
+
+----- Contact Details -----
+Name: Prasad Vitthal Sanap
+Mobile: 8149533136
+email: fmc202158@zealeducation.com
+
+
