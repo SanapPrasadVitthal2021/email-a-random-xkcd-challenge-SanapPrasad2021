@@ -9,7 +9,7 @@
         $sender = "From: prasadsanap@epavitram.com\r\n";
         $sender .= "MIME-Version: 1.0"."\r\n";
         $sender .="Content-type:text/html;charset=UTF-8"."\r\n";
-        
+
         if(mail($to,$subject,$message,$sender)){       
                 header('location:thankyou.php');          
         }else{
