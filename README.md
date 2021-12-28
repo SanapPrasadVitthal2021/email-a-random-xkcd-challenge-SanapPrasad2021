@@ -22,3 +22,12 @@ Fields- 1)fname:For first name.
 
 ----- Database -----
 I use for this assignment mysql database which is virtual.
+
+
+
+----- How to run -----
+<Note: You need to install xampp for run this project.>
+1.Download this file and paste it into [C:\xampp\htdocs]
+2.Create database or import [visitor_det.sql] file into your localhost.
+3.Update [databaseConnection.php] with your credentials.
+4.Then 
