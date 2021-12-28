@@ -54,7 +54,7 @@ Add [shellscript.vbs] file as schedular>>Set time in that.
 
 
 ----- Contact Details -----
-Name: Prasad Vitthal Sanap
+Name: Sanap Prasad Vitthal
 Mobile: 8149533136
 email: fmc202158@zealeducation.com
 
