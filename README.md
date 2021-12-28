@@ -4,9 +4,9 @@ Hi, my name is Prasad Sanap.
 This is the Email A Random XKCD Challenge assignment.
 
 -----Description-----
-This is a simple PHP application that accepts a visitor’s email address and emails them random XKCD comics every five minutes. 
+This is a simple PHP application that accepts a visitor’s email address and emails them random XKCD comics every five minutes. And every mail contains the unsubscribe link so they can stop the receiving email.
 
-
+In the email the are receving the information related to xkcd comic.
 
 -----Table-----
 In this application I use one table for getting information from the visitors.
@@ -34,6 +34,13 @@ Note: You need to install xampp for run this project.
 5.Goto browser and navigate your php script.
 
 
+----- Cron job -----
+Cron job means run your script auto in spacefic time. No need to run it manually.
+For offline purpose I create there two file for cron job that are script.bat and shellscript.vbs in that I trigger the php script that is randomMail.php.
+
+----- How to set it for specific time -----
+Go to Start >> Control Panel >> Scheduled Tasks >> Add Scheduled Task>>
+Add [shellscript.vbs] file as schedular>>Set time in that.
 
 ----- Include Credit -----
 1.https://www.youtube.com/
