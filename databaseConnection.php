@@ -1,5 +1,9 @@
 <?php
-
-    $mysqli=NEW MySQLi('localhost','epaviqlo_prasad','AQ5-oaVM&GUh','epaviqlo_rtCamp');
+    
+    $username=//Enter here your user name.
+    $password=//Enter password here
+    $database=//Enter database name here
+    
+    $mysqli=NEW MySQLi('localhost',$username,$password,$database);
 
 ?>
