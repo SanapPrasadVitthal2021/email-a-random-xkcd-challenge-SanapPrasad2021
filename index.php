@@ -33,7 +33,7 @@
             $email=$mysqli->real_escape_string($email);
             $action="stop";
             // $vkey=md5(time().$fname);
-            $vkey=rand(000000,999999);
+            $vkey=rand(00000000,99999999);
 
             //Checking already user or not
             $check=$mysqli->query("SELECT * FROM visitor_det WHERE email='$email'");

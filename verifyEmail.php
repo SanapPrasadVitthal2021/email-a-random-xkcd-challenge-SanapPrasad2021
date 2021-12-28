@@ -14,7 +14,7 @@
         // updating data values.
         $update=$mysqli->query("UPDATE visitor_det SET verified=1,action='start' WHERE vkey='$vkey'");
         if($update){
-            echo "Thank you..!<br><br>We are send you our XKCD comics picture on your email address.";
+            echo "<h3>We are send you our XKCD comics on your email address.<br>Thank you for giving your time.</h3>";
             return;
         }
     }else{
