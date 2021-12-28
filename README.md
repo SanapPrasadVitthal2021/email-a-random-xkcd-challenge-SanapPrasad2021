@@ -21,4 +21,4 @@ Fields- 1)fname:For first name.
         7)action:For start and stop sending mails.
 
 ----- Database -----
-I use bigrockin this assignment
+I use for this assignment mysql database which is virtual.
