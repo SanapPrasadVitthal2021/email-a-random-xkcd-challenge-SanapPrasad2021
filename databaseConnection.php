@@ -8,6 +8,8 @@
     if ($mymysqli->connect_error) {
         die("Connection failed: " . $mymysqli->connect_error);
       }
-      echo "Connected successfully";
+    else{
+        echo "Connected successfully";
+    }
 
 ?>
