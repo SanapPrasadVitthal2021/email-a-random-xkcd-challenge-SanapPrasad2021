@@ -16,7 +16,7 @@
         $email->addTo("$to","User Details");
         $email->addContent("text/plain","This is message from XKCD Comics.");
         $email->addContent(
-            "text/html", "<h3>Hey $fname $lname, you're almost ready to start enjoing<strong> XKCD Comics</strong>.Simply verify your email address with your one time password.</h3><br><h3>Verification OTP:<br>$vkey</h3><br><br><br><h5>Thank you.</h5>"
+            "text/html", "<h3>Hey $fname $lname, you're almost ready to start enjoing<strong> XKCD Comics</strong>.Simply verify your email address with your one time password.</h3><br><h3>Verification OTP:<br>$vkey</h3><br><br><h5>Thank you.</h5>"
         );
         $sendgrid = new \SendGrid(SENDGRID_API_KEY);
         try {
