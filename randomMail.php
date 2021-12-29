@@ -1,12 +1,20 @@
 <?php
-    require_once 'databaseConnection.php';
-    class AutoSendingMail{
-        function SendMail($firstName,$lastName,$receiver,$link,$url,$title,$month,$num,$transcript,$day,$year,$alt,$safe_title){
-    
-            $to=$receiver;
-            $subject="XKCD Comics";
-            // Message body for email
-            $message= "<h2>Hi, $firstName $lastName</h2>
+require_once 'databaseConnection.php';
+require_once 'config.php'; 
+require 'vendor/autoload.php';
+
+class AutoSendingMail{
+    function SendMail($firstName,$lastName,$receiver,$link,$url,$title,$month,$num,$transcript,$day,$year,$alt,$safe_title){
+        $to=$receiver;
+
+        // If you're using Composer (recommended)
+        $email = new \SendGrid\Mail\Mail(); 
+        $email->setFrom("fmc202158@zealeducation.com", "Prasad Sanap");
+        $email->setSubject("XKCD Comics");
+        $email->addTo("$to","User Details");
+        $email->addContent("text/plain","This is email from XKCD Comics.");
+        $email->addContent(
+            "text/html", "<h2>Hi, $firstName $lastName</h2>
             <h4>----- XKCD COMIC -----
             <br>
             Title:".$title."
@@ -30,14 +38,19 @@
             <img src=".$url." alt=".$title.">
             <br>
             <p>You are receiving this email because you have expressed interest in our XKCD comics.</p>
-            <a href='https://epavitram.com/unsubscribe.php'>Unsubscribe</a>";
-            $sender = "From: prasadsanap@epavitram.com\r\n";
-            $sender .= "MIME-Version: 1.0"."\r\n";
-            $sender .="Content-type:text/html;charset=UTF-8"."\r\n";
-            mail($to,$subject,$message,$sender);
-            // echo $message;
+            <a href='https://epavitram.com/unsubscribe.php'>Unsubscribe</a>"
+        );
+        $sendgrid = new \SendGrid(SENDGRID_API_KEY);
+        try {
+            $response = $sendgrid->send($email);
+            // print $response->statusCode() . "\n";
+            // print_r($response->headers());
+            // print $response->body() . "\n";
+        } catch (Exception $e) {
+            echo 'Caught exception: '. $e->getMessage() ."\n";
         }
     }
+}
 
     
     

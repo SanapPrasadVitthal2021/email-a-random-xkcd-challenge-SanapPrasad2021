@@ -27,6 +27,9 @@
             if($response->statusCode()===202){
                     header('location:thankyou.php');
             }
+            else{
+                 echo "<h3>OOPs.! Email not send.</h3>";
+            }
         
         } catch (Exception $e) {
             echo 'Caught exception: '. $e->getMessage() ."\n";
