@@ -8,17 +8,26 @@ This is a simple PHP application that accepts a visitor’s email address and em
 
 In the email they are receving the information related to xkcd comic and img also.
 
+----- Operating environment ------
+Front end - PHP,VBScript,HTML,SQL
+Back end - MySQL
+
 
 ----- Links -----
+1)Github repository:-
+https://github.com/SanapPrasadVitthal2021/email-a-random-xkcd-challenge-SanapPrasad2021
 
+2)Live demo:-
+http://epavitram.com/
 
-
+3)Github account:-
+https://github.com/SanapPrasad2021
 
 
 ----- Table -----
 In this application I use one table for getting information from the visitors and store it into.
  
-Table-visitor_det
+Table Name:-visitor_det
 Fields- 1)fname:For first name.
         2)lname:For last name.
         3)email:For email address.
@@ -29,6 +38,12 @@ Fields- 1)fname:For first name.
 
 ----- Database -----
 I use for this assignment mysql database which is virtual.
+MySQL Workbench with connected to the Remote MySQL.
+
+
+----- Email service -----
+I use in this project send grid email sending api to send the email to the visitor.
+
 
 
 
@@ -49,7 +64,7 @@ For offline purpose I create there two file for cron job that are script.bat and
 Go to Start >> Control Panel >> Scheduled Tasks >> Add Scheduled Task>>
 Add [shellscript.vbs] file as schedular>>Set time in that.
 
------ Include Credit -----
+----- Bibliography -----
 1.https://www.youtube.com/
 2.https://www.google.com/
 
