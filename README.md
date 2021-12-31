@@ -14,7 +14,7 @@ Back end - MySQL
 
 
 ----- Links -----
-1)Github repository:-
+1)Github assignment repository:-
 https://github.com/SanapPrasadVitthal2021/email-a-random-xkcd-challenge-SanapPrasad2021
 
 2)Live demo:-
@@ -26,6 +26,7 @@ https://github.com/SanapPrasad2021
 
 ----- Table -----
 In this application I use one table for getting information from the visitors and store it into.
+And I also use another table image_det which is store the image id, image number,image name,image path.
  
 Table Name:-visitor_det
 Fields- 1)fname:For first name.
@@ -36,6 +37,11 @@ Fields- 1)fname:For first name.
         6)date_time:For date and time.
         7)action:For start and stop sending mails.
 
+Table Name:-image_det
+        1)id:For image.
+        2)imgNum:For image number.
+        3)imgname:For image name.
+        4)imglocation:For image path.
 ----- Database -----
 I use for this assignment mysql database which is virtual.
 MySQL Workbench with connected to the Remote MySQL.
@@ -67,6 +73,7 @@ Add [shellscript.vbs] file as schedular>>Set time in that.
 ----- Bibliography -----
 1.https://www.youtube.com/
 2.https://www.google.com/
+3.https://twilio.com/
 
 ----- Youtube channels refers -----
 1.phpBasics

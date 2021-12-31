@@ -2,11 +2,14 @@
 require_once 'databaseConnection.php';
 require_once 'config.php'; 
 require 'vendor/autoload.php';
+require_once 'imgdownload.php';
 
 class AutoSendingMail{
-    function SendMail($firstName,$lastName,$receiver,$link,$url,$title,$month,$num,$transcript,$day,$year,$alt,$safe_title){
+    function SendMail($firstName,$lastName,$receiver,$link,$getpath,$title,$month,$num,$transcript,$day,$year,$alt,$safe_title){
         $to=$receiver;
-
+        
+        // $img=file_get_contents($url);
+        // print_r $img;
         // If you're using Composer (recommended)
         $email = new \SendGrid\Mail\Mail(); 
         $email->setFrom("fmc202158@zealeducation.com", "Prasad Sanap");
@@ -35,15 +38,20 @@ class AutoSendingMail{
             <br>
             Link of this comic:<a href='https://xkcd.com/$num/info.0.json'>".$link."</a>
             <br>
-            <img src=".$url." alt=".$title.">
-            <br>
             <p>You are receiving this email because you have expressed interest in our XKCD comics.</p>
             <a href='https://epavitram.com/unsubscribe.php'>Unsubscribe</a>"
         );
+        $file_encoded=base64_encode(file_get_contents($getpath));
+        $email->addAttachment(
+            $file_encoded,
+            "application/jpg",
+            "$title.jpg",
+            "attachment"
+           );
         $sendgrid = new \SendGrid(SENDGRID_API_KEY);
         try {
             $response = $sendgrid->send($email);
-            // print $response->statusCode() . "\n";
+            print $response->statusCode() . "\n";
             // print_r($response->headers());
             // print $response->body() . "\n";
         } catch (Exception $e) {
@@ -52,11 +60,10 @@ class AutoSendingMail{
     }
 }
 
-    
-    
-    
+
     // Remote Database Connection
     $asm=new AutoSendingMail();
+    $imgD=new DownloadImg();
     $details=$mysqli->query("SELECT fname,lname,email FROM visitor_det WHERE action='start'");
     
     // set array
@@ -88,15 +95,27 @@ class AutoSendingMail{
     $alt=$data->alt;
     $day=$data->day;
     $transcript=$data->transcript;
-    
+
+    // For image
+    $check=$mysqli->query("SELECT * FROM image_det WHERE imgNum=$no");
+    if(mysqli_num_rows($check) == 0)
+    {
+        $getpath=$imgD->downlo($no,$url,$title,$mysqli);
+        
+    }else{
+         $getpath=$mysqli->query("SELECT imglocation FROM image_det WHERE imgNum='$no'");
+    }
+  
+
     // Foreach array loop and send email to them.
     foreach($array as $val){
-    
         $fname=$val['fname'];
         $lname=$val['lname'];
         $email=$val['email'];
         // Calling function
-        $asm->SendMail($fname,$lname,$email,$link,$url,$title,$month,$num,$transcript,$day,$year,$alt,$safe_title);
+        $asm->SendMail($fname,$lname,$email,$link,$getpath,$title,$month,$num,$transcript,$day,$year,$alt,$safe_title);
     }
+    //   echo $getpath;
+  
     
 ?>
