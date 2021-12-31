@@ -14,7 +14,7 @@
             $newimage=$mysqli->real_escape_string($newimage);
             $new=$mysqli->real_escape_string($new);
             $mysqli->query("INSERT INTO image_det(imgNum,imgname,imglocation)VALUES('$no','$newimage','$new')");
-        return $new;
+            return $new;
         }
     }
 
