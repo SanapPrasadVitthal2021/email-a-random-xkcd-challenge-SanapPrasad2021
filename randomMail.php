@@ -5,7 +5,7 @@ require 'vendor/autoload.php';
 require_once 'imgdownload.php';
 
 class AutoSendingMail{
-    function SendMail($firstName,$lastName,$receiver,$link,$getpath,$title,$month,$num,$transcript,$day,$year,$alt,$safe_title){
+    function SendMail($firstName,$lastName,$receiver,$link,$url,$getpath,$title,$month,$num,$transcript,$day,$year,$alt,$safe_title){
         $to=$receiver;
         
         // $img=file_get_contents($url);
@@ -37,6 +37,9 @@ class AutoSendingMail{
             Transcript:".$transcript."
             <br>
             Link of this comic:<a href='https://xkcd.com/$num/info.0.json'>".$link."</a>
+            <br>
+            <br>
+            <img src=".$url." alt=".$title.">
             <br>
             <p>You are receiving this email because you have expressed interest in our XKCD comics.</p>
             <a href='https://epavitram.com/unsubscribe.php'>Unsubscribe</a>"
@@ -113,7 +116,7 @@ class AutoSendingMail{
         $lname=$val['lname'];
         $email=$val['email'];
         // Calling function
-        $asm->SendMail($fname,$lname,$email,$link,$getpath,$title,$month,$num,$transcript,$day,$year,$alt,$safe_title);
+        $asm->SendMail($fname,$lname,$email,$link,$url,$getpath,$title,$month,$num,$transcript,$day,$year,$alt,$safe_title);
     }
     //   echo $getpath;
   
