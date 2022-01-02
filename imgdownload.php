@@ -2,7 +2,6 @@
     require_once 'config.php'; 
     require_once 'randomMail.php';
     require_once 'databaseConnection.php';
-
     class DownloadImg{
         function downlo($no,$url,$title,$mysqli){
             $file=$url;
